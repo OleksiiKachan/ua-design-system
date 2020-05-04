@@ -1,25 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+
+import BlueButton from './elements/button/BlueButton';
+import YellowButton from './elements/button/YellowButton';
+import OutlineButton from './elements/button/OutlineButton';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div style={{ margin: `10px`, display: 'grid', gridRowGap: `20px` }}>
+        <BlueButton>Button</BlueButton>
+        <BlueButton disabled>Button</BlueButton>
+      </div>
+      <div style={{ margin: `10px`, display: 'grid', gridRowGap: `20px` }}>
+        <YellowButton>Button</YellowButton>
+        <YellowButton disabled>Button</YellowButton>
+      </div>
+      <div style={{ margin: `10px`, display: 'grid', gridRowGap: `20px` }}>
+        <OutlineButton>Button</OutlineButton>
+        <OutlineButton disabled>Button</OutlineButton>
+      </div>
+    </>
   );
 }
 
