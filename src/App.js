@@ -1,24 +1,22 @@
 import React from 'react';
 import './App.css';
 
-import BlueButton from './elements/button/BlueButton';
-import YellowButton from './elements/button/YellowButton';
-import OutlineButton from './elements/button/OutlineButton';
+import { Button } from './elements';
 
 function App() {
   return (
     <>
       <div style={{ margin: `10px`, display: 'grid', gridRowGap: `20px` }}>
-        <BlueButton>Button</BlueButton>
-        <BlueButton disabled>Button</BlueButton>
+        <Button.Blue>Button</Button.Blue>
+        <Button.Blue disabled>Button</Button.Blue>
       </div>
       <div style={{ margin: `10px`, display: 'grid', gridRowGap: `20px` }}>
-        <YellowButton>Button</YellowButton>
-        <YellowButton disabled>Button</YellowButton>
+        <Button.Yellow>Button</Button.Yellow>
+        <Button.Yellow disabled>Button</Button.Yellow>
       </div>
       <div style={{ margin: `10px`, display: 'grid', gridRowGap: `20px` }}>
-        <OutlineButton>Button</OutlineButton>
-        <OutlineButton disabled>Button</OutlineButton>
+        <Button.Outline>Button</Button.Outline>
+        <Button.Outline disabled>Button</Button.Outline>
       </div>
     </>
   );
