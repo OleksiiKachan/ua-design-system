@@ -6,7 +6,7 @@ export default styled(AbstractButton)`
   border: 2px solid #004bc1;
   color: #004bc1;
 
-  &:hover:not(&:focus):not(&:active) {
+  &:hover:not(:focus):not(:active) {
     border-color: #234161;
     color: #234161;
   }
