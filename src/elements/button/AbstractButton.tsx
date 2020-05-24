@@ -5,7 +5,7 @@ import './styles.scss';
 
 type PropsType = {
   children: ReactNode;
-  as?: ReactNode | string | Function;
+  component?: ReactNode | string | Function;
   className?: string;
   disabled?: boolean;
   href?: string;
@@ -18,7 +18,7 @@ const AbstractButton = React.forwardRef(
   (
     {
       children,
-      as,
+      component,
       className,
       disabled = false,
       href,
@@ -31,7 +31,6 @@ const AbstractButton = React.forwardRef(
     const buttonClasses = classNames(className, {
       [`abstract-button`]: true,
       [`abstract-button--disabled`]: disabled,
-      className,
     });
 
     const commonProps = {
@@ -40,7 +39,7 @@ const AbstractButton = React.forwardRef(
       ref,
     };
 
-    let component: any = 'button';
+    let as: any = 'button';
     let otherProps: object = {
       disabled,
       type,
@@ -48,21 +47,22 @@ const AbstractButton = React.forwardRef(
 
     const anchorProps = {
       href,
+      to: href,
     };
 
-    if (as) {
-      component = as;
+    if (component) {
+      as = component;
       otherProps = {
         ...otherProps,
         ...anchorProps,
       };
     } else if (href && !disabled) {
-      component = 'a';
+      as = 'a';
       otherProps = { ...anchorProps };
     }
 
     return React.createElement(
-      component,
+      as,
       {
         ...other,
         ...commonProps,
