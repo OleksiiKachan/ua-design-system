@@ -1,10 +1,8 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Link } from 'react-router-dom';
 import './App.css';
 
 import { Button } from './elements';
-
-import Icon from './elements/icon/Icon';
 
 function App() {
   return (
@@ -32,68 +30,10 @@ function App() {
           <div style={{ margin: `10px`, display: 'grid', gridRowGap: `20px` }}>
             <Button.Blue href="https://design.gov.ua/">Button</Button.Blue>
           </div>
-        </div>
-        <div
-          style={{
-            margin: `10px`,
-          }}
-        >
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: `repeat(4, 40px)`,
-            }}
-          >
-            <div style={{ padding: '5px' }}>
-              <Icon type="acrobat" mode="dark" />
-            </div>
-            <div style={{ padding: '5px' }}>
-              <Icon type="acrobat" mode="contrast" />
-            </div>
-            <div style={{ padding: '5px', backgroundColor: '#C2C5CB' }}>
-              <Icon type="acrobat" mode="contrast" />
-            </div>
-            <div style={{ padding: '5px', backgroundColor: '#224f91' }}>
-              <Icon type="acrobat" mode="light" />
-            </div>
-          </div>
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: `repeat(4, 40px)`,
-            }}
-          >
-            <div style={{ padding: '5px' }}>
-              <Icon type="add" mode="dark" />
-            </div>
-            <div style={{ padding: '5px' }}>
-              <Icon type="add" mode="contrast" />
-            </div>
-            <div style={{ padding: '5px', backgroundColor: '#C2C5CB' }}>
-              <Icon type="add" mode="contrast" />
-            </div>
-            <div style={{ padding: '5px', backgroundColor: '#224f91' }}>
-              <Icon type="add" mode="light" />
-            </div>
-          </div>
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: `repeat(4, 40px)`,
-            }}
-          >
-            <div style={{ padding: '5px' }}>
-              <Icon type="adjust" mode="dark" />
-            </div>
-            <div style={{ padding: '5px' }}>
-              <Icon type="adjust" mode="contrast" />
-            </div>
-            <div style={{ padding: '5px', backgroundColor: '#C2C5CB' }}>
-              <Icon type="adjust" mode="contrast" />
-            </div>
-            <div style={{ padding: '5px', backgroundColor: '#224f91' }}>
-              <Icon type="adjust" mode="light" />
-            </div>
+          <div style={{ margin: `10px`, display: 'grid', gridRowGap: `20px` }}>
+            <Button.Blue href="/error" component={Link}>
+              Button
+            </Button.Blue>
           </div>
         </div>
       </div>
