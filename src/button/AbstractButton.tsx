@@ -1,7 +1,5 @@
 import React, { ReactNode } from 'react';
-import classNames from 'classnames';
-
-import './styles.scss';
+import styled from 'styled-components';
 
 type PropsType = {
   children: ReactNode;
@@ -19,7 +17,6 @@ const AbstractButton = React.forwardRef(
     {
       children,
       component,
-      className,
       disabled = false,
       href,
       type = 'button',
@@ -28,14 +25,8 @@ const AbstractButton = React.forwardRef(
     }: PropsType,
     ref
   ) => {
-    const buttonClasses = classNames(className, {
-      [`abstract-button`]: true,
-      [`abstract-button--disabled`]: disabled,
-    });
-
     const commonProps = {
       tabIndex,
-      className: buttonClasses,
       ref,
     };
 
@@ -73,4 +64,37 @@ const AbstractButton = React.forwardRef(
   }
 );
 
-export default AbstractButton;
+export default styled(AbstractButton)`
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  min-height: 50px;
+  max-width: 160px;
+  width: 100%;
+  padding: 10px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  font-family: 'Open Sans', sans-serif;
+  white-space: nowrap;
+  text-decoration: none !important;
+
+  &:focus,
+  &:active {
+    outline: 2px dotted #6f777b !important;
+    outline-offset: 3px;
+  }
+
+  &--disabled,
+  &:disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+`;
