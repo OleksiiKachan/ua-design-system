@@ -1,6 +1,6 @@
 {
   "name": "ua-design-system",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "UA design system built with React",
   "author": "Oleksii Kachan <alexkachan.lutsk@gmail.com>",
   "license": "MIT",
@@ -23,9 +23,7 @@
     "commit": "npx git-cz"
   },
   "peerDependencies": {
-    "react": ">=16",
-    "react-is": ">= 16.8.0",
-    "styled-components": "^4.4.1"
+    "react": ">=16"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
