@@ -1,16 +1,13 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, ButtonHTMLAttributes } from 'react';
 import styled from 'styled-components';
 
-type PropsType = {
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLElement> {
   children: ReactNode;
   component?: ReactNode | string | Function;
-  className?: string;
-  disabled?: boolean;
   href?: string;
-  type?: 'button' | 'reset' | 'submit';
   tabIndex?: number;
   role?: string;
-};
+}
 
 const AbstractButton = React.forwardRef(
   (
@@ -22,7 +19,7 @@ const AbstractButton = React.forwardRef(
       type = 'button',
       tabIndex = 0,
       ...other
-    }: PropsType,
+    }: ButtonProps,
     ref
   ) => {
     const commonProps = {
