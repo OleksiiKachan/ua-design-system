@@ -89,7 +89,6 @@ export default styled(AbstractButton)`
     outline-offset: 3px;
   }
 
-  &--disabled,
   &:disabled {
     cursor: not-allowed;
     pointer-events: none;
