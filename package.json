@@ -20,7 +20,8 @@
     "start": "rollup -c -w",
     "prepare": "yarn run build",
     "test": "jest --no-cache --passWithNoTests",
-    "commit": "npx git-cz"
+    "commit": "npx git-cz",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "peerDependencies": {
     "react": ">=16"
